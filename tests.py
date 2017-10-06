@@ -8,12 +8,12 @@ from pymongo import MongoClient
 
 class TripPlannerTestCase(unittest.TestCase):
     def setUp(self):
-        self.app = server2.app.test_client()
-        server2.app.config['TESTING'] = True
+        self.app = server.app.test_client()
+        # self.server.app.config['TESTING'] = True
         mongo = MongoClient('localhost', 27107)
         global db
-        db = mongo.local
-        server2.app.db = db
+        self.app.db = mongo.local
+        self.server.app.db = self.app.db
         db.drop_collection('users')
 
     def testCreateUser(self):
