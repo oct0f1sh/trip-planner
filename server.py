@@ -25,13 +25,21 @@ class User(Resource):
         return user
 
     def get(self):
+        hashed_auth = request.headers['Auth']
+        #email = request.json['email']
+        email = 'd@d.co'
+        print(hashed_auth)
+
         user_collection = app.db.users
-        user = user_collection.find_one(request.json)
+        user = user_collection.find_one({'email': email})
 
         if user is None:
-            return ("Invalid user.", 400, None)
+            return ("Invalid email.", 401, None)
 
-        return (user, 200, None)
+        if hashed_auth == user['auth']:
+            return ("Logged in.", 200, None)
+        else:
+            return ("Incorrect login/password.", 401, None)
 
     def patch(self):
         updated_user = request.json

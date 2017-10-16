@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		AEB4490C1F953DBF009A7D8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB4490B1F953DBF009A7D8B /* AppDelegate.swift */; };
-		AEB4490E1F953DBF009A7D8B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB4490D1F953DBF009A7D8B /* ViewController.swift */; };
-		AEB449111F953DBF009A7D8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB4490F1F953DBF009A7D8B /* Main.storyboard */; };
+		AEB4490E1F953DBF009A7D8B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB4490D1F953DBF009A7D8B /* LoginViewController.swift */; };
+		AEB449111F953DBF009A7D8B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB4490F1F953DBF009A7D8B /* Login.storyboard */; };
 		AEB449131F953DBF009A7D8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AEB449121F953DBF009A7D8B /* Assets.xcassets */; };
 		AEB449161F953DBF009A7D8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB449141F953DBF009A7D8B /* LaunchScreen.storyboard */; };
+		AEB449211F9540D4009A7D8B /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB449201F9540D4009A7D8B /* Style.swift */; };
+		AEB449241F954455009A7D8B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB449231F954455009A7D8B /* User.swift */; };
+		AEB449261F95445D009A7D8B /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB449251F95445D009A7D8B /* Trip.swift */; };
+		AEB4492C1F954756009A7D8B /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB4492B1F954756009A7D8B /* LoginService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AEB449081F953DBF009A7D8B /* Trip-Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trip-Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB4490B1F953DBF009A7D8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AEB4490D1F953DBF009A7D8B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AEB449101F953DBF009A7D8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AEB4490D1F953DBF009A7D8B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AEB449101F953DBF009A7D8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		AEB449121F953DBF009A7D8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AEB449151F953DBF009A7D8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AEB449171F953DBF009A7D8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEB449201F9540D4009A7D8B /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		AEB449231F954455009A7D8B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AEB449251F95445D009A7D8B /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		AEB4492B1F954756009A7D8B /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,66 @@
 		AEB4490A1F953DBF009A7D8B /* Trip-Planner */ = {
 			isa = PBXGroup;
 			children = (
-				AEB4490B1F953DBF009A7D8B /* AppDelegate.swift */,
-				AEB4490D1F953DBF009A7D8B /* ViewController.swift */,
-				AEB4490F1F953DBF009A7D8B /* Main.storyboard */,
+				AEB4492A1F95471C009A7D8B /* Services */,
+				AEB449271F9546CA009A7D8B /* Helpers */,
+				AEB449221F95444C009A7D8B /* Models */,
+				AEB4491F1F953E6F009A7D8B /* Storyboards */,
+				AEB4491E1F953E64009A7D8B /* View Controllers */,
+				AEB4491D1F953E47009A7D8B /* Supporting Files */,
 				AEB449121F953DBF009A7D8B /* Assets.xcassets */,
-				AEB449141F953DBF009A7D8B /* LaunchScreen.storyboard */,
-				AEB449171F953DBF009A7D8B /* Info.plist */,
 			);
 			path = "Trip-Planner";
+			sourceTree = "<group>";
+		};
+		AEB4491D1F953E47009A7D8B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AEB4490B1F953DBF009A7D8B /* AppDelegate.swift */,
+				AEB449171F953DBF009A7D8B /* Info.plist */,
+				AEB449141F953DBF009A7D8B /* LaunchScreen.storyboard */,
+				AEB449201F9540D4009A7D8B /* Style.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AEB4491E1F953E64009A7D8B /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AEB4490D1F953DBF009A7D8B /* LoginViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		AEB4491F1F953E6F009A7D8B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				AEB4490F1F953DBF009A7D8B /* Login.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		AEB449221F95444C009A7D8B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AEB449231F954455009A7D8B /* User.swift */,
+				AEB449251F95445D009A7D8B /* Trip.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AEB449271F9546CA009A7D8B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AEB4492A1F95471C009A7D8B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AEB4492B1F954756009A7D8B /* LoginService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,7 +185,7 @@
 			files = (
 				AEB449161F953DBF009A7D8B /* LaunchScreen.storyboard in Resources */,
 				AEB449131F953DBF009A7D8B /* Assets.xcassets in Resources */,
-				AEB449111F953DBF009A7D8B /* Main.storyboard in Resources */,
+				AEB449111F953DBF009A7D8B /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +196,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEB4490E1F953DBF009A7D8B /* ViewController.swift in Sources */,
+				AEB449261F95445D009A7D8B /* Trip.swift in Sources */,
+				AEB4492C1F954756009A7D8B /* LoginService.swift in Sources */,
+				AEB449241F954455009A7D8B /* User.swift in Sources */,
+				AEB4490E1F953DBF009A7D8B /* LoginViewController.swift in Sources */,
+				AEB449211F9540D4009A7D8B /* Style.swift in Sources */,
 				AEB4490C1F953DBF009A7D8B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,12 +208,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AEB4490F1F953DBF009A7D8B /* Main.storyboard */ = {
+		AEB4490F1F953DBF009A7D8B /* Login.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				AEB449101F953DBF009A7D8B /* Base */,
 			);
-			name = Main.storyboard;
+			name = Login.storyboard;
 			sourceTree = "<group>";
 		};
 		AEB449141F953DBF009A7D8B /* LaunchScreen.storyboard */ = {
@@ -276,7 +340,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P4PBGN25JV;
-				INFOPLIST_FILE = "Trip-Planner/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Trip-Planner/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "us.duncanmacdonald.Trip-Planner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -291,7 +355,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P4PBGN25JV;
-				INFOPLIST_FILE = "Trip-Planner/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Trip-Planner/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "us.duncanmacdonald.Trip-Planner";
 				PRODUCT_NAME = "$(TARGET_NAME)";
