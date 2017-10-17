@@ -28,6 +28,7 @@ def authenticate_user(f):
             return ("Invalid email.", 401, None)
 
         if bcrypt.checkpw(password, user['password']):
+            print('user {} authenticated'.format(auth_user.username))
             return f(*args, **kwargs)
         else:
             return ("Incorrect login/password.", 401, None)
@@ -35,17 +36,22 @@ def authenticate_user(f):
 
 # Write Resources here
 class User(Resource):
-    @authenticate_user
     def post(self):
         json_user = request.json
+        print(json_user)
         password = json_user['password'].encode('utf-8')
         user_collection = app.db.users
-        user_dict = {'email': json_user['email'],
-                     'password': bcrypt.hashpw(password, bcrypt.gensalt(app.bcrypt_rounds))}
-        result = user_collection.insert_one(user_dict)
-        user = user_collection.find_one({"_id": result.inserted_id})
-        del user['password']
-        return (user, 201, None)
+
+        exists = user_collection.find_one({'email': json_user['email']})
+        if exists is None:
+            user_dict = {'email': json_user['email'],
+                         'password': bcrypt.hashpw(password, bcrypt.gensalt(app.bcrypt_rounds))}
+            result = user_collection.insert_one(user_dict)
+            user = user_collection.find_one({"_id": result.inserted_id})
+            del user['password']
+            return (user, 201, None)
+        else:
+            return ("Email in use", 401, None)
 
     @authenticate_user
     def get(self):

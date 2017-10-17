@@ -14,8 +14,49 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var isNewUser: UISwitch!
     
     @IBAction func loginButtonTapped(_ sender: Any) {
+        if emailTextField.text == "" {
+            print("Email text field empty")
+            return
+        }
+        if passwordTextField.text == "" {
+            print("Email text field empty")
+            return
+        }
+        
         let usr = User(email: emailTextField.text!, password: passwordTextField.text!)
-        print(usr.authHeader)
+        
+        if isNewUser.isOn {
+            NetworkService.createUser(user: usr, completion: { (code) in
+                if let code = code {
+                    switch code {
+                    case 201:
+                        print("Successfully created new user")
+                    case 401:
+                        DispatchQueue.main.async(execute: {
+                            self.showAlert(title: "Error", message: "Email already in use.", actionText: "Ok")
+                        })
+                    default:
+                        print("An unknown error occurred while trying to create a user")
+                    }
+                }
+            })
+        } else {
+            NetworkService.authenticateUser(user: usr) { (code) in
+                if let code = code {
+                    switch code {
+                    case 200:
+                        print("Logged in successfully")
+                    default:
+                        DispatchQueue.main.async(execute: {
+                            self.showAlert(title: "Error", message: "Error logging in.", actionText: "Ok")
+                        })
+                    }
+                } else {
+                    DispatchQueue.main.async(execute: {
+                        self.showAlert(title: "ERROR", message: "Error logging in. Please fill out the email and password fields completely.", actionText: "Fine")
+                    })
+                }
+            }
+        }
     }
 }
-

@@ -15,7 +15,8 @@
 		AEB449211F9540D4009A7D8B /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB449201F9540D4009A7D8B /* Style.swift */; };
 		AEB449241F954455009A7D8B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB449231F954455009A7D8B /* User.swift */; };
 		AEB449261F95445D009A7D8B /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB449251F95445D009A7D8B /* Trip.swift */; };
-		AEB4492C1F954756009A7D8B /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB4492B1F954756009A7D8B /* LoginService.swift */; };
+		AEB4492C1F954756009A7D8B /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB4492B1F954756009A7D8B /* NetworkService.swift */; };
+		AEB4492F1F967E39009A7D8B /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB4492E1F967E39009A7D8B /* UIViewController+Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +30,8 @@
 		AEB449201F9540D4009A7D8B /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		AEB449231F954455009A7D8B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AEB449251F95445D009A7D8B /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
-		AEB4492B1F954756009A7D8B /* LoginService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginService.swift; sourceTree = "<group>"; };
+		AEB4492B1F954756009A7D8B /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		AEB4492E1F967E39009A7D8B /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		AEB4490A1F953DBF009A7D8B /* Trip-Planner */ = {
 			isa = PBXGroup;
 			children = (
+				AEB4492D1F967E2B009A7D8B /* Extensions */,
 				AEB4492A1F95471C009A7D8B /* Services */,
 				AEB449271F9546CA009A7D8B /* Helpers */,
 				AEB449221F95444C009A7D8B /* Models */,
@@ -119,9 +122,17 @@
 		AEB4492A1F95471C009A7D8B /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				AEB4492B1F954756009A7D8B /* LoginService.swift */,
+				AEB4492B1F954756009A7D8B /* NetworkService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		AEB4492D1F967E2B009A7D8B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AEB4492E1F967E39009A7D8B /* UIViewController+Alert.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,11 +208,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEB449261F95445D009A7D8B /* Trip.swift in Sources */,
-				AEB4492C1F954756009A7D8B /* LoginService.swift in Sources */,
+				AEB4492C1F954756009A7D8B /* NetworkService.swift in Sources */,
 				AEB449241F954455009A7D8B /* User.swift in Sources */,
 				AEB4490E1F953DBF009A7D8B /* LoginViewController.swift in Sources */,
 				AEB449211F9540D4009A7D8B /* Style.swift in Sources */,
 				AEB4490C1F953DBF009A7D8B /* AppDelegate.swift in Sources */,
+				AEB4492F1F967E39009A7D8B /* UIViewController+Alert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

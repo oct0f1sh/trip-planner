@@ -8,19 +8,16 @@
 
 import Foundation
 
-class User {
+class User: Codable {
     let authHeader: String
+    let email: String
+    let password: String
     
     init(email: String, password: String) {
-        self.authHeader = User.generateBasicAuthHeader(email: email, password: password)
-    }
-    
-    static func generateBasicAuthHeader(email: String, password: String) -> String {
         let loginString = String(format: "%@:%@", email, password)
         let loginData: Data = loginString.data(using: String.Encoding.utf8)!
         let base64LoginString = loginData.base64EncodedString(options: .init(rawValue: 0))
-        let authHeaderString = "Basic \(base64LoginString)"
-        
-        return authHeaderString
+        self.authHeader = "Basic \(base64LoginString)"
     }
 }
+
