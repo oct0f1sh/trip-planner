@@ -11,13 +11,12 @@ import Foundation
 class NetworkService {
     static let usersURL = URL(string: "http://127.0.0.1:5000/users/")!
     static let tripsURL = URL(string: "http://127.0.0.1:5000/trips/")!
-    static let usersRequest = URLRequest(url: NetworkService.usersURL)
     static let tripsRequest = URLRequest(url: NetworkService.tripsURL)
+    static let usersRequest = URLRequest(url: NetworkService.usersURL)
     
     static func authenticateUser(user: User, completion: @escaping (Int?) -> Void) {
-        var request = NetworkService.usersRequest
+        var request = URLRequest(url: NetworkService.usersURL)
         request.addValue(user.authHeader, forHTTPHeaderField: "Authorization")
-        
         request.httpMethod = "GET"
         let session = URLSession.shared
         
@@ -39,19 +38,12 @@ class NetworkService {
     
     static func createUser(user: User, completion: @escaping (Int?) -> Void) {
         var request = NetworkService.usersRequest
-        request.addValue(user.authHeader, forHTTPHeaderField: "Authorization")
         request.httpMethod = "POST"
         let session = URLSession.shared
+        let encoder = JSONEncoder()
         
-
-        do {
-            request.httpBody = try
-        } catch let error {
-            print("Error in creating user: \(error.localizedDescription)")
-        }
-        
-        print(request.httpMethod)
-        print(user.userDict)
+        request.httpBody = try! encoder.encode(user)
+        request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         
         let task = session.dataTask(with: request) { (data, response, error) in
             guard error == nil else {

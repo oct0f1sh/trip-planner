@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE3833BC1F96A06600BE43E4 /* Trips.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE3833BB1F96A06600BE43E4 /* Trips.storyboard */; };
+		AE3833BF1F96A13400BE43E4 /* TripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3833BE1F96A13400BE43E4 /* TripCell.swift */; };
+		AE3833C11F96A15D00BE43E4 /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3833C01F96A15D00BE43E4 /* TripsViewController.swift */; };
+		AE3833C31F96A50D00BE43E4 /* Trip+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3833C21F96A50D00BE43E4 /* Trip+Decodable.swift */; };
+		AE3833C51F96A75B00BE43E4 /* EditUser.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE3833C41F96A75B00BE43E4 /* EditUser.storyboard */; };
+		AE3833C71F96A7B600BE43E4 /* User+Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3833C61F96A7B600BE43E4 /* User+Encodable.swift */; };
 		AEB4490C1F953DBF009A7D8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB4490B1F953DBF009A7D8B /* AppDelegate.swift */; };
 		AEB4490E1F953DBF009A7D8B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEB4490D1F953DBF009A7D8B /* LoginViewController.swift */; };
 		AEB449111F953DBF009A7D8B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEB4490F1F953DBF009A7D8B /* Login.storyboard */; };
@@ -20,6 +26,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE3833BB1F96A06600BE43E4 /* Trips.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trips.storyboard; sourceTree = "<group>"; };
+		AE3833BE1F96A13400BE43E4 /* TripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCell.swift; sourceTree = "<group>"; };
+		AE3833C01F96A15D00BE43E4 /* TripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
+		AE3833C21F96A50D00BE43E4 /* Trip+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trip+Decodable.swift"; sourceTree = "<group>"; };
+		AE3833C41F96A75B00BE43E4 /* EditUser.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditUser.storyboard; sourceTree = "<group>"; };
+		AE3833C61F96A7B600BE43E4 /* User+Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+Encodable.swift"; sourceTree = "<group>"; };
 		AEB449081F953DBF009A7D8B /* Trip-Planner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trip-Planner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEB4490B1F953DBF009A7D8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEB4490D1F953DBF009A7D8B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE3833BD1F96A11F00BE43E4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AE3833BE1F96A13400BE43E4 /* TripCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		AEB448FF1F953DBF009A7D8B = {
 			isa = PBXGroup;
 			children = (
@@ -68,8 +88,9 @@
 				AEB4492A1F95471C009A7D8B /* Services */,
 				AEB449271F9546CA009A7D8B /* Helpers */,
 				AEB449221F95444C009A7D8B /* Models */,
-				AEB4491F1F953E6F009A7D8B /* Storyboards */,
 				AEB4491E1F953E64009A7D8B /* View Controllers */,
+				AE3833BD1F96A11F00BE43E4 /* Views */,
+				AEB4491F1F953E6F009A7D8B /* Storyboards */,
 				AEB4491D1F953E47009A7D8B /* Supporting Files */,
 				AEB449121F953DBF009A7D8B /* Assets.xcassets */,
 			);
@@ -91,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				AEB4490D1F953DBF009A7D8B /* LoginViewController.swift */,
+				AE3833C01F96A15D00BE43E4 /* TripsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -99,6 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				AEB4490F1F953DBF009A7D8B /* Login.storyboard */,
+				AE3833BB1F96A06600BE43E4 /* Trips.storyboard */,
+				AE3833C41F96A75B00BE43E4 /* EditUser.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -131,6 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				AEB4492E1F967E39009A7D8B /* UIViewController+Alert.swift */,
+				AE3833C21F96A50D00BE43E4 /* Trip+Decodable.swift */,
+				AE3833C61F96A7B600BE43E4 /* User+Encodable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -194,7 +220,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE3833C51F96A75B00BE43E4 /* EditUser.storyboard in Resources */,
 				AEB449161F953DBF009A7D8B /* LaunchScreen.storyboard in Resources */,
+				AE3833BC1F96A06600BE43E4 /* Trips.storyboard in Resources */,
 				AEB449131F953DBF009A7D8B /* Assets.xcassets in Resources */,
 				AEB449111F953DBF009A7D8B /* Login.storyboard in Resources */,
 			);
@@ -207,8 +235,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE3833C71F96A7B600BE43E4 /* User+Encodable.swift in Sources */,
+				AE3833BF1F96A13400BE43E4 /* TripCell.swift in Sources */,
 				AEB449261F95445D009A7D8B /* Trip.swift in Sources */,
+				AE3833C31F96A50D00BE43E4 /* Trip+Decodable.swift in Sources */,
 				AEB4492C1F954756009A7D8B /* NetworkService.swift in Sources */,
+				AE3833C11F96A15D00BE43E4 /* TripsViewController.swift in Sources */,
 				AEB449241F954455009A7D8B /* User.swift in Sources */,
 				AEB4490E1F953DBF009A7D8B /* LoginViewController.swift in Sources */,
 				AEB449211F9540D4009A7D8B /* Style.swift in Sources */,

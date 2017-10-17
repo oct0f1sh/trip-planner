@@ -37,6 +37,7 @@ def authenticate_user(f):
 # Write Resources here
 class User(Resource):
     def post(self):
+        print(request)
         json_user = request.json
         print(json_user)
         password = json_user['password'].encode('utf-8')
@@ -114,8 +115,8 @@ class Trip(Resource):
             trips = trip_collection.find({})
 
             if trips is None:
-                response = "error"
-                return (response, 404, None)
+                response = "No content found"
+                return (response, 204, None)
             else:
                 return trips
 

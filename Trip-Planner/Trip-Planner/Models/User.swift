@@ -8,16 +8,21 @@
 
 import Foundation
 
-class User: Codable {
+class User {
     let authHeader: String
     let email: String
     let password: String
     
     init(email: String, password: String) {
+        self.email = email
+        self.password = password
         let loginString = String(format: "%@:%@", email, password)
         let loginData: Data = loginString.data(using: String.Encoding.utf8)!
         let base64LoginString = loginData.base64EncodedString(options: .init(rawValue: 0))
         self.authHeader = "Basic \(base64LoginString)"
     }
+    enum UserKeys: String, CodingKey {
+        case email
+        case password
+    }
 }
-

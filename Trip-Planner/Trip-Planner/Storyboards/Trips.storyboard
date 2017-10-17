@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Trips View Controller-->
+        <scene sceneID="1Qq-UH-Iz2">
+            <objects>
+                <viewController id="6Sc-Rd-dsB" customClass="TripsViewController" customModule="Trip_Planner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kLp-j0-zz2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="daT-cb-KOh">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TripCell" rowHeight="60" id="F77-hL-3vH" customClass="TripCell" customModule="Trip_Planner" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F77-hL-3vH" id="ANX-VN-uRN">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nbs-5f-80R">
+                                                    <rect key="frame" x="28" y="16" width="101" height="27.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="nbs-5f-80R" firstAttribute="leading" secondItem="ANX-VN-uRN" secondAttribute="leadingMargin" constant="20" id="1mM-b7-62x"/>
+                                                <constraint firstItem="nbs-5f-80R" firstAttribute="centerY" secondItem="ANX-VN-uRN" secondAttribute="centerY" id="2G5-wM-H0O"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="nbs-5f-80R" secondAttribute="trailing" id="Jvx-1o-U2A"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tripNameLabel" destination="nbs-5f-80R" id="vYS-Jv-Rwt"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="6Sc-Rd-dsB" id="qKY-o3-7bd"/>
+                                    <outlet property="delegate" destination="6Sc-Rd-dsB" id="619-B7-do0"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uuW-30-sbr" firstAttribute="trailing" secondItem="daT-cb-KOh" secondAttribute="trailing" id="7C5-om-hbo"/>
+                            <constraint firstItem="daT-cb-KOh" firstAttribute="top" secondItem="uuW-30-sbr" secondAttribute="top" id="mb3-vV-bpP"/>
+                            <constraint firstItem="daT-cb-KOh" firstAttribute="leading" secondItem="uuW-30-sbr" secondAttribute="leading" id="wgq-wo-iK4"/>
+                            <constraint firstItem="uuW-30-sbr" firstAttribute="bottom" secondItem="daT-cb-KOh" secondAttribute="bottom" id="xcf-te-KcT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="uuW-30-sbr"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VtK-4e-JK4">
+                        <barButtonItem key="rightBarButtonItem" title="User" id="mVM-bE-eZL">
+                            <connections>
+                                <segue destination="yfV-eM-bvn" kind="show" id="hhc-EJ-nRp"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="daT-cb-KOh" id="s1B-Py-i3v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b4G-pw-9HF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="687.20000000000005" y="-339.58020989505252"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hRD-bw-m67">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lAg-NT-HN0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Cgb-nH-ANF">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6Sc-Rd-dsB" kind="relationship" relationship="rootViewController" id="sDo-cC-7jf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UGs-bz-LCh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-490" y="-340"/>
+        </scene>
+        <!--EditUser-->
+        <scene sceneID="Ur0-ru-PUr">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EditUser" id="yfV-eM-bvn" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jou-04-9e4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1929" y="-340"/>
+        </scene>
+    </scenes>
+</document>
