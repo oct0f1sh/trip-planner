@@ -15,32 +15,50 @@ app.bcrypt_rounds = 12
 api = Api(app)
 
 
-# Write Resources here
-class User(Resource):
-    def post(self):
-        new_user = request.json
-        user_collection = app.db.users
-        result = user_collection.insert_one(new_user)
-        user = user_collection.find_one({"_id": result.inserted_id})
-        return user
-
-    def get(self):
-        hashed_auth = request.headers['Auth']
-        #email = request.json['email']
-        email = 'd@d.co'
-        print(hashed_auth)
+def authenticate_user(f):
+    def wrapper(*args, **kwargs):
+        auth_user = request.authorization
+        password = auth_user.password.encode('utf-8')
+        print(password)
 
         user_collection = app.db.users
-        user = user_collection.find_one({'email': email})
+        user = user_collection.find_one({'email': auth_user.username})
 
         if user is None:
             return ("Invalid email.", 401, None)
 
-        if hashed_auth == user['auth']:
-            return ("Logged in.", 200, None)
+        if bcrypt.checkpw(password, user['password']):
+            return f(*args, **kwargs)
         else:
             return ("Incorrect login/password.", 401, None)
+    return wrapper
 
+# Write Resources here
+class User(Resource):
+    @authenticate_user
+    def post(self):
+        json_user = request.json
+        password = json_user['password'].encode('utf-8')
+        user_collection = app.db.users
+        user_dict = {'email': json_user['email'],
+                     'password': bcrypt.hashpw(password, bcrypt.gensalt(app.bcrypt_rounds))}
+        result = user_collection.insert_one(user_dict)
+        user = user_collection.find_one({"_id": result.inserted_id})
+        del user['password']
+        return (user, 201, None)
+
+    @authenticate_user
+    def get(self):
+        user_collection = app.db.users
+        user = user_collection.find_one({'email': request.authorization.username})
+
+        if user is None:
+            return (None, 400, None)
+        else:
+            del user['password']
+            return (user, 200, None)
+
+    @authenticate_user
     def patch(self):
         updated_user = request.json
         user_collection = app.db.users
@@ -56,6 +74,7 @@ class User(Resource):
         updated_user = user_collection.find_one(updated_user)
         return (updated_user, 200, None)
 
+    @authenticate_user
     def delete(self):
         username = request.json.get('username')
         user_collection = app.db.users
@@ -72,6 +91,7 @@ class User(Resource):
 
 
 class Trip(Resource):
+    @authenticate_user
     def post(self):
         new_trip = request.json
         trip_collection = app.db.trips
@@ -79,6 +99,7 @@ class Trip(Resource):
         trip = trip_collection.find_one({"_id": ObjectId(result.inserted_id)})
         return trip
 
+    @authenticate_user
     def get(self, trip_id=None):
         trip_collection = app.db.trips
 
@@ -97,6 +118,7 @@ class Trip(Resource):
             trip = trip_collection.find_one({"_id": ObjectId(trip_id)})
             return trip
 
+    @authenticate_user
     def patch(self, trip_id=None):
         trip_collection = app.db.trips
         trip = trip_collection.find_one({"_id": ObjectId(trip_id)})
@@ -111,6 +133,7 @@ class Trip(Resource):
         updated_trip = trip_collection.find_one({"_id": ObjectId(trip_id)})
         return (updated_trip, 200, None)
 
+    @authenticate_user
     def delete(self, trip_id=None):
         trip_collection = app.db.trips
         trip = trip_collection.find_one({"_id": ObjectId(trip_id)})
@@ -139,7 +162,7 @@ def output_json(data, code, headers=None):
 
 
 if __name__ == '__main__':
-    # Turn this on in debug mode to get detailled information about request
+    # Turn this on in debug mode to get detailed information about request
     # related exceptions: http://flask.pocoo.org/docs/0.10/config/
     app.config['TRAP_BAD_REQUEST_ERRORS'] = True
     app.run(debug=True)
