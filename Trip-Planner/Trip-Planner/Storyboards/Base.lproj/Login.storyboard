@@ -133,11 +133,20 @@
                         <outlet property="emailTextField" destination="Jnj-UJ-QX1" id="zX0-s2-iC0"/>
                         <outlet property="isNewUser" destination="1fu-gJ-bWj" id="f41-aM-5vv"/>
                         <outlet property="passwordTextField" destination="xBl-z2-fLf" id="YgI-Cl-Rbi"/>
+                        <segue destination="3Mh-di-juL" kind="show" identifier="toTripsView" id="P6X-Ad-KbY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+        <!--Trips-->
+        <scene sceneID="vDW-hq-euH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Trips" id="3Mh-di-juL" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lch-zK-esf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1161" y="132"/>
         </scene>
     </scenes>
 </document>

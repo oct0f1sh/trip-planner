@@ -13,10 +13,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var isNewUser: UISwitch!
     
-    func toTableView() {
-        
-    }
-    
     @IBAction func loginButtonTapped(_ sender: Any) {
         if emailTextField.text == "" {
             print("Email text field empty")
@@ -36,7 +32,9 @@ class LoginViewController: UIViewController {
                     switch code {
                     case 201:
                         print("Successfully created new user")
-                        self.present(TripsViewController(), animated: true, completion: nil)
+                        DispatchQueue.main.async(execute: {
+                            self.performSegue(withIdentifier: "toTripsView", sender: self)
+                        })
                     case 401:
                         DispatchQueue.main.async(execute: {
                             self.showAlert(title: "Error", message: "Email already in use.", actionText: "Ok")
@@ -53,7 +51,9 @@ class LoginViewController: UIViewController {
                     switch code {
                     case 200:
                         print("Logged in successfully")
-                        self.present(TripsViewController(), animated: true, completion: nil)
+                        DispatchQueue.main.async(execute: {
+                            self.performSegue(withIdentifier: "toTripsView", sender: self)
+                        })
                     default:
                         DispatchQueue.main.async(execute: {
                             self.showAlert(title: "Error", message: "Error logging in.", actionText: "Ok")

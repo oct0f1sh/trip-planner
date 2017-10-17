@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="4ca50280-42f6-4108-b0a4-daff8c68d4d1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner.xcodeproj/project.xcworkspace/xcuserdata/duncan.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner.xcodeproj/project.xcworkspace/xcuserdata/duncan.xcuserdatad/UserInterfaceState.xcuserstate" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Extensions/Trip+Decodable.swift" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Extensions/Trip+Decodable.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Models/Trip.swift" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Models/Trip.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Services/NetworkService.swift" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Services/NetworkService.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Storyboards/Base.lproj/Login.storyboard" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Storyboards/Base.lproj/Login.storyboard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/View Controllers/LoginViewController.swift" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/View Controllers/LoginViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/View Controllers/TripsViewController.swift" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/View Controllers/TripsViewController.swift" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,7 +26,7 @@
       <file leaf-file-name="server.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
+            <state relative-caret-position="155">
               <caret line="121" column="0" lean-forward="true" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
@@ -189,7 +191,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
+        <state relative-caret-position="155">
           <caret line="121" column="0" lean-forward="true" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
