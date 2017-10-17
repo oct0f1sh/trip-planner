@@ -13,6 +13,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var isNewUser: UISwitch!
     
+    func toTableView() {
+        
+    }
+    
     @IBAction func loginButtonTapped(_ sender: Any) {
         if emailTextField.text == "" {
             print("Email text field empty")
@@ -25,12 +29,14 @@ class LoginViewController: UIViewController {
         
         let usr = User(email: emailTextField.text!, password: passwordTextField.text!)
         
+        // create new user
         if isNewUser.isOn {
             NetworkService.createUser(user: usr, completion: { (code) in
                 if let code = code {
                     switch code {
                     case 201:
                         print("Successfully created new user")
+                        self.present(TripsViewController(), animated: true, completion: nil)
                     case 401:
                         DispatchQueue.main.async(execute: {
                             self.showAlert(title: "Error", message: "Email already in use.", actionText: "Ok")
@@ -40,12 +46,14 @@ class LoginViewController: UIViewController {
                     }
                 }
             })
+        // log in with existing user
         } else {
             NetworkService.authenticateUser(user: usr) { (code) in
                 if let code = code {
                     switch code {
                     case 200:
                         print("Logged in successfully")
+                        self.present(TripsViewController(), animated: true, completion: nil)
                     default:
                         DispatchQueue.main.async(execute: {
                             self.showAlert(title: "Error", message: "Error logging in.", actionText: "Ok")

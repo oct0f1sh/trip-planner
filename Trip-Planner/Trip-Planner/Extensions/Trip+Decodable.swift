@@ -22,10 +22,8 @@ extension Trip: Decodable {
         let name = try container.decode(String.self, forKey: .name)
         let owner = try container.decode(String.self, forKey: .owner)
         let isCompleted = try container.decode(Bool.self, forKey: .isCompleted)
+        let waypoints = try container.decode([String].self, forKey: .waypoints)
         
-        var waypointContainer = try container.nestedUnkeyedContainer(forKey: .waypoints)
-        let waypoints = try waypointContainer.decodeIfPresent(String.self)
-        
-        self.init(name: name, owner: owner, isCompleted: isCompleted, waypoints: waypoints)
+        self.init(name: name, email: owner, isCompleted: isCompleted, waypoints: waypoints)
     }
 }

@@ -17,14 +17,14 @@ struct Trip {
     
     init(name: String, owner: User, isCompleted: Bool = false) {
         self.name = name
-        self.isCompleted = completed
+        self.isCompleted = isCompleted
         self.waypoints = []
         self.owner = owner.email
     }
     
-    init(name: String, owner: User, isCompleted: Bool, waypoints: [String]) {
+    init(name: String, email: String, isCompleted: Bool, waypoints: [String]) {
         self.name = name
-        self.owner = owner
+        self.owner = email
         self.isCompleted = isCompleted
         self.waypoints = waypoints
     }

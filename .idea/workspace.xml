@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ca50280-42f6-4108-b0a4-daff8c68d4d1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Extensions/Trip+Decodable.swift" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Extensions/User+Encodable.swift" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Storyboards/EditUser.storyboard" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Storyboards/Trips.storyboard" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/View Controllers/TripsViewController.swift" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Views/TripCell.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner.xcodeproj/project.xcworkspace/xcuserdata/duncan.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner.xcodeproj/project.xcworkspace/xcuserdata/duncan.xcuserdatad/UserInterfaceState.xcuserstate" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner.xcodeproj/project.pbxproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner.xcodeproj/xcuserdata/duncan.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner.xcodeproj/xcuserdata/duncan.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Extensions/Trip+Decodable.swift" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Extensions/Trip+Decodable.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Models/Trip.swift" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Models/Trip.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Models/User.swift" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Models/User.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Services/NetworkService.swift" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Services/NetworkService.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.py" afterPath="$PROJECT_DIR$/server.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
