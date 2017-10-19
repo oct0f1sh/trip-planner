@@ -102,6 +102,12 @@ class Trip(Resource):
     def post(self):
         new_trip = request.json
         trip_collection = app.db.trips
+
+        user_collection = app.db.users
+        user = user_collection.find_one{'email': request.authorization.username}
+
+        new_trip['user_id'] = user["id"]
+
         result = trip_collection.insert_one(new_trip)
         trip = trip_collection.find_one({"_id": ObjectId(result.inserted_id)})
         return trip
@@ -110,9 +116,12 @@ class Trip(Resource):
     def get(self, trip_id=None):
         trip_collection = app.db.trips
 
+        user_collection = app.db.users
+        user = user_collection.find_one{'email': request.authorization.username}
+
         # if url = /trips/
         if trip_id is None:
-            trips = trip_collection.find({})
+            trips = trip_collection.find({'user_id': ObjectId(user['id'])})
 
             if trips is None:
                 response = "No content found"

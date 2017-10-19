@@ -26,6 +26,10 @@ class TripsViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func addTripTapped(_ sender: Any) {
+        
+    }
 }
 
 extension TripsViewController: UITableViewDelegate {

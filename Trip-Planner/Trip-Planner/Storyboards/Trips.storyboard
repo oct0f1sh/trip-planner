@@ -63,9 +63,14 @@
                         <viewLayoutGuide key="safeArea" id="uuW-30-sbr"/>
                     </view>
                     <navigationItem key="navigationItem" id="VtK-4e-JK4">
-                        <barButtonItem key="rightBarButtonItem" title="User" id="mVM-bE-eZL">
+                        <barButtonItem key="leftBarButtonItem" title="User" id="mVM-bE-eZL">
                             <connections>
                                 <segue destination="yfV-eM-bvn" kind="show" id="hhc-EJ-nRp"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="eej-we-emG">
+                            <connections>
+                                <action selector="addTripTapped:" destination="6Sc-Rd-dsB" id="hc1-Oh-4du"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

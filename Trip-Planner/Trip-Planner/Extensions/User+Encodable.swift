@@ -15,3 +15,4 @@ extension User: Encodable {
         try values.encode(password, forKey: .password)
     }
 }
+
