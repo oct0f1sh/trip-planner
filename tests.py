@@ -1,4 +1,4 @@
-import server
+import app
 import unittest
 import json
 import bcrypt
@@ -8,7 +8,7 @@ from pymongo import MongoClient
 
 class TripPlannerTestCase(unittest.TestCase):
     def setUp(self):
-        self.app = server.app.test_client()
+        self.app = app.app.test_client()
         # self.server.app.config['TESTING'] = True
         mongo = MongoClient('localhost', 27107)
         global db
