@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4ca50280-42f6-4108-b0a4-daff8c68d4d1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner.xcodeproj/project.xcworkspace/xcuserdata/duncan.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner.xcodeproj/project.xcworkspace/xcuserdata/duncan.xcuserdatad/UserInterfaceState.xcuserstate" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/development/pip-selfcheck.json" afterPath="$PROJECT_DIR$/development/pip-selfcheck.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.py" afterPath="$PROJECT_DIR$/server.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,8 +24,8 @@
       <file leaf-file-name="server.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="703">
-              <caret line="166" column="29" lean-forward="false" selection-start-line="166" selection-start-column="29" selection-end-line="166" selection-end-column="29" />
+            <state relative-caret-position="357">
+              <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
               </folding>
@@ -35,7 +37,7 @@
         <entry file="file://$PROJECT_DIR$/tests.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
-              <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+              <caret line="18" column="29" lean-forward="false" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -91,6 +93,15 @@
             <path>
               <item name="trip-planner-test" type="b2602c69:ProjectViewProjectNode" />
               <item name="trip-planner-test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trip-planner-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="trip-planner-test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 2.7.10 virtualenv at ~/Desktop/MakeSchool/trip-planner-test/development &gt;" type="70bed36:NamedLibraryElementNode" />
             </path>
           </expand>
           <select />
@@ -277,7 +288,7 @@
     <entry file="file://$PROJECT_DIR$/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
-          <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+          <caret line="18" column="29" lean-forward="false" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -286,8 +297,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="166" column="29" lean-forward="false" selection-start-line="166" selection-start-column="29" selection-end-line="166" selection-end-column="29" />
+        <state relative-caret-position="357">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
           </folding>
