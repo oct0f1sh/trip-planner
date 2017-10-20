@@ -28,4 +28,11 @@ struct Trip {
         self.isCompleted = isCompleted
         self.waypoints = waypoints
     }
+    
+    enum TripKeys: String, CodingKey {
+        case name
+        case owner
+        case isCompleted = "is_completed"
+        case waypoints
+    }
 }

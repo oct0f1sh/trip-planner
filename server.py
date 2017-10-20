@@ -104,7 +104,7 @@ class Trip(Resource):
         trip_collection = app.db.trips
 
         user_collection = app.db.users
-        user = user_collection.find_one{'email': request.authorization.username}
+        user = user_collection.find_one({'email': request.authorization.username})
 
         new_trip['user_id'] = user["id"]
 
@@ -117,11 +117,11 @@ class Trip(Resource):
         trip_collection = app.db.trips
 
         user_collection = app.db.users
-        user = user_collection.find_one{'email': request.authorization.username}
+        # user = user_collection.find_one({'email': request.authorization.username})
 
         # if url = /trips/
         if trip_id is None:
-            trips = trip_collection.find({'user_id': ObjectId(user['id'])})
+            trips = trip_collection.find({'owner': request.authorization.username})
 
             if trips is None:
                 response = "No content found"
@@ -135,7 +135,7 @@ class Trip(Resource):
             return trip
 
     @authenticate_user
-    def patch(self, trip_id=None):
+    def put(self, trip_id=None):
         trip_collection = app.db.trips
         trip = trip_collection.find_one({"_id": ObjectId(trip_id)})
 

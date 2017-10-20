@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE08EAC81F9A7A9E00702E93 /* Trip.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE08EAC71F9A7A9E00702E93 /* Trip.storyboard */; };
+		AE08EACA1F9A7AAD00702E93 /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE08EAC91F9A7AAD00702E93 /* TripViewController.swift */; };
+		AE08EACC1F9A7C1800702E93 /* WaypointCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE08EACB1F9A7C1800702E93 /* WaypointCell.swift */; };
+		AE08EACE1F9A849100702E93 /* Trip+Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE08EACD1F9A849100702E93 /* Trip+Encodable.swift */; };
 		AE3833BC1F96A06600BE43E4 /* Trips.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE3833BB1F96A06600BE43E4 /* Trips.storyboard */; };
 		AE3833BF1F96A13400BE43E4 /* TripCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3833BE1F96A13400BE43E4 /* TripCell.swift */; };
 		AE3833C11F96A15D00BE43E4 /* TripsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3833C01F96A15D00BE43E4 /* TripsViewController.swift */; };
@@ -26,6 +30,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE08EAC71F9A7A9E00702E93 /* Trip.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trip.storyboard; sourceTree = "<group>"; };
+		AE08EAC91F9A7AAD00702E93 /* TripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
+		AE08EACB1F9A7C1800702E93 /* WaypointCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointCell.swift; sourceTree = "<group>"; };
+		AE08EACD1F9A849100702E93 /* Trip+Encodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trip+Encodable.swift"; sourceTree = "<group>"; };
 		AE3833BB1F96A06600BE43E4 /* Trips.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Trips.storyboard; sourceTree = "<group>"; };
 		AE3833BE1F96A13400BE43E4 /* TripCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCell.swift; sourceTree = "<group>"; };
 		AE3833C01F96A15D00BE43E4 /* TripsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				AE3833BE1F96A13400BE43E4 /* TripCell.swift */,
+				AE08EACB1F9A7C1800702E93 /* WaypointCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -113,6 +122,7 @@
 			children = (
 				AEB4490D1F953DBF009A7D8B /* LoginViewController.swift */,
 				AE3833C01F96A15D00BE43E4 /* TripsViewController.swift */,
+				AE08EAC91F9A7AAD00702E93 /* TripViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -123,6 +133,7 @@
 				AEB4490F1F953DBF009A7D8B /* Login.storyboard */,
 				AE3833BB1F96A06600BE43E4 /* Trips.storyboard */,
 				AE3833C41F96A75B00BE43E4 /* EditUser.storyboard */,
+				AE08EAC71F9A7A9E00702E93 /* Trip.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -156,6 +167,7 @@
 			children = (
 				AEB4492E1F967E39009A7D8B /* UIViewController+Alert.swift */,
 				AE3833C21F96A50D00BE43E4 /* Trip+Decodable.swift */,
+				AE08EACD1F9A849100702E93 /* Trip+Encodable.swift */,
 				AE3833C61F96A7B600BE43E4 /* User+Encodable.swift */,
 			);
 			path = Extensions;
@@ -223,6 +235,7 @@
 				AE3833C51F96A75B00BE43E4 /* EditUser.storyboard in Resources */,
 				AEB449161F953DBF009A7D8B /* LaunchScreen.storyboard in Resources */,
 				AE3833BC1F96A06600BE43E4 /* Trips.storyboard in Resources */,
+				AE08EAC81F9A7A9E00702E93 /* Trip.storyboard in Resources */,
 				AEB449131F953DBF009A7D8B /* Assets.xcassets in Resources */,
 				AEB449111F953DBF009A7D8B /* Login.storyboard in Resources */,
 			);
@@ -235,7 +248,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE08EACC1F9A7C1800702E93 /* WaypointCell.swift in Sources */,
 				AE3833C71F96A7B600BE43E4 /* User+Encodable.swift in Sources */,
+				AE08EACE1F9A849100702E93 /* Trip+Encodable.swift in Sources */,
 				AE3833BF1F96A13400BE43E4 /* TripCell.swift in Sources */,
 				AEB449261F95445D009A7D8B /* Trip.swift in Sources */,
 				AE3833C31F96A50D00BE43E4 /* Trip+Decodable.swift in Sources */,
@@ -244,6 +259,7 @@
 				AEB449241F954455009A7D8B /* User.swift in Sources */,
 				AEB4490E1F953DBF009A7D8B /* LoginViewController.swift in Sources */,
 				AEB449211F9540D4009A7D8B /* Style.swift in Sources */,
+				AE08EACA1F9A7AAD00702E93 /* TripViewController.swift in Sources */,
 				AEB4490C1F953DBF009A7D8B /* AppDelegate.swift in Sources */,
 				AEB4492F1F967E39009A7D8B /* UIViewController+Alert.swift in Sources */,
 			);

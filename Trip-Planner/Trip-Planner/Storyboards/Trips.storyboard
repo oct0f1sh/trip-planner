@@ -44,6 +44,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="tripNameLabel" destination="nbs-5f-80R" id="vYS-Jv-Rwt"/>
+                                            <segue destination="yhi-nn-e7E" kind="show" id="1fz-KI-MAj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -62,18 +63,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uuW-30-sbr"/>
                     </view>
-                    <navigationItem key="navigationItem" id="VtK-4e-JK4">
-                        <barButtonItem key="leftBarButtonItem" title="User" id="mVM-bE-eZL">
-                            <connections>
-                                <segue destination="yfV-eM-bvn" kind="show" id="hhc-EJ-nRp"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="eej-we-emG">
-                            <connections>
-                                <action selector="addTripTapped:" destination="6Sc-Rd-dsB" id="hc1-Oh-4du"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="VtK-4e-JK4"/>
                     <connections>
                         <outlet property="tableView" destination="daT-cb-KOh" id="s1B-Py-i3v"/>
                     </connections>
@@ -81,6 +71,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b4G-pw-9HF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="687.20000000000005" y="-339.58020989505252"/>
+        </scene>
+        <!--Trip-->
+        <scene sceneID="guD-Bv-wED">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Trip" id="yhi-nn-e7E" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QEj-mG-7Br" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1726" y="-341"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hRD-bw-m67">
@@ -99,14 +97,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UGs-bz-LCh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-490" y="-340"/>
-        </scene>
-        <!--EditUser-->
-        <scene sceneID="Ur0-ru-PUr">
-            <objects>
-                <viewControllerPlaceholder storyboardName="EditUser" id="yfV-eM-bvn" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jou-04-9e4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1874" y="-340"/>
         </scene>
     </scenes>
 </document>

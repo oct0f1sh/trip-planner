@@ -30,10 +30,14 @@ class TripsViewController: UIViewController {
     @IBAction func addTripTapped(_ sender: Any) {
         
     }
-}
-
-extension TripsViewController: UITableViewDelegate {
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let indexPath = tableView.indexPathForSelectedRow {
+            let selectedRow = indexPath.row
+            let tripView = segue.destination as! TripViewController
+            tripView.trip = trips[selectedRow]
+        }
+    }
 }
 
 extension TripsViewController: UITableViewDataSource {

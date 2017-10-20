@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../CS-1-Programming-Fundamentals/Herd_Immunity_Project/.idea/Herd_Immunity_Project.iml" filepath="$PROJECT_DIR$/../CS-1-Programming-Fundamentals/Herd_Immunity_Project/.idea/Herd_Immunity_Project.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/trip-planner-test.iml" filepath="$PROJECT_DIR$/.idea/trip-planner-test.iml" />
     </modules>
   </component>
