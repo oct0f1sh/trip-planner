@@ -106,8 +106,6 @@ class Trip(Resource):
         user_collection = app.db.users
         user = user_collection.find_one({'email': request.authorization.username})
 
-        new_trip['user_id'] = user["id"]
-
         result = trip_collection.insert_one(new_trip)
         trip = trip_collection.find_one({"_id": ObjectId(result.inserted_id)})
         return trip
@@ -135,7 +133,7 @@ class Trip(Resource):
             return trip
 
     @authenticate_user
-    def put(self, trip_id=None):
+    def patch(self, trip_id=None):
         trip_collection = app.db.trips
         trip = trip_collection.find_one({"_id": ObjectId(trip_id)})
 
@@ -147,6 +145,22 @@ class Trip(Resource):
         new_trip = request.json
         trip_collection.update({"_id": ObjectId(trip_id)}, {'$set': new_trip})
         updated_trip = trip_collection.find_one({"_id": ObjectId(trip_id)})
+        return (updated_trip, 200, None)
+
+    @authenticate_user
+    def put(self, trip_id=None):
+        trip_collection = app.db.trips
+        new_waypoint = request.json['waypoint']
+        trip = trip_collection.find_one({"_id": ObjectId(trip_id)})
+
+
+        if trip is None:
+            return ('Invalid trip_id', 400, None)
+        else:
+            trip_collection.update({"_id": ObjectId(trip_id)}, {'$push': {'waypoints': new_waypoint}})
+
+        updated_trip = trip_collection.find_one({"_id": ObjectId(trip_id)})
+
         return (updated_trip, 200, None)
 
     @authenticate_user
