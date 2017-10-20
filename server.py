@@ -10,7 +10,7 @@ import bcrypt
 
 app = Flask(__name__)
 # mongo = MongoClient('localhost', 27017)
-mongo - MongoClient("mongodb://duncanmacdonald:9FGZ&7dQ%x,_@ds029297.mlab.com:29297/trip-planner-duncan")
+mongo = MongoClient("mongodb://duncanmacdonald:9FGZ&7dQ%x,_@ds029297.mlab.com:29297/trip-planner-duncan")
 app.db = mongo.trip-planner-duncan
 app.bcrypt_rounds = 12
 api = Api(app)
