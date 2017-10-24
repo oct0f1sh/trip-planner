@@ -118,8 +118,9 @@ class Trip(Resource):
         if found_trip is not None:
             return ('A trip with that name already exists.', 400, None)
         else:
-            trip = trip_collection.insert_one(new_trip)
-            return (trip, 201, None)
+            trip_collection.insert_one(new_trip)
+            found_trip = trip_collection.find_one({'name': new_trip['name']})
+            return (found_trip, 201, None)
 
     @authenticate_user
     def get(self, trip_id=None):

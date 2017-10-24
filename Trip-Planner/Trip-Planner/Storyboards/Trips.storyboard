@@ -44,7 +44,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="tripNameLabel" destination="nbs-5f-80R" id="vYS-Jv-Rwt"/>
-                                            <segue destination="yhi-nn-e7E" kind="show" id="1fz-KI-MAj"/>
+                                            <segue destination="yhi-nn-e7E" kind="show" identifier="toEditTrip" id="1fz-KI-MAj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -64,12 +64,10 @@
                         <viewLayoutGuide key="safeArea" id="uuW-30-sbr"/>
                     </view>
                     <navigationItem key="navigationItem" id="VtK-4e-JK4">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="vnA-aD-jwV">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7EF-jQ-qKz">
-                                <rect key="frame" x="313" y="7" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="vnA-aD-jwV">
+                            <connections>
+                                <action selector="addTripTapped:" destination="6Sc-Rd-dsB" id="8F8-oX-O2c"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>

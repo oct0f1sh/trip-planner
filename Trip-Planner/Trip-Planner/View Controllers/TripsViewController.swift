@@ -28,7 +28,7 @@ class TripsViewController: UIViewController {
     }
     
     @IBAction func addTripTapped(_ sender: Any) {
-        
+        performSegue(withIdentifier: "toEditTrip", sender: self)
     }
     
     @IBAction func unwindToTrips(segue: UIStoryboardSegue) {
@@ -40,6 +40,9 @@ class TripsViewController: UIViewController {
             let selectedRow = indexPath.row
             let tripView = segue.destination as! TripViewController
             tripView.trip = trips[selectedRow]
+        } else {
+            let tripView = segue.destination as! TripViewController
+            tripView.tripType = .newTrip
         }
     }
 }

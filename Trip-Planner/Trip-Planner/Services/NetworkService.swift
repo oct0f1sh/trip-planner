@@ -110,7 +110,35 @@ class NetworkService {
             
             if let response = response {
                 let response = response as! HTTPURLResponse
-                print("Trip PUT response code: \(response)")
+                print("Trip PUT response code: \(response.statusCode)")
+                completion(response.statusCode)
+            }
+        }
+        task.resume()
+    }
+    
+    static func postTrip(trip: Trip, user: User = NetworkService.loggedInUser, completion: @escaping (Int?) -> Void) {
+        var request = NetworkService.tripsRequest
+        request.httpMethod = "POST"
+        let session = URLSession.shared
+        let encoder = JSONEncoder()
+        
+        let trip = try! encoder.encode(trip)
+        
+        request.addValue(user.authHeader, forHTTPHeaderField: "Authorization")
+        request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.httpBody = trip
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            guard error == nil else {
+                print("Error posting trip")
+                completion(nil)
+                return
+            }
+            
+            if let response = response {
+                let response = response as! HTTPURLResponse
+                print("Trip POST response code: \(response.statusCode)")
                 completion(response.statusCode)
             }
         }

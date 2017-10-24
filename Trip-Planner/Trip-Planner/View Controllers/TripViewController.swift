@@ -9,8 +9,14 @@
 import Foundation
 import UIKit
 
+enum TripType {
+    case newTrip
+    case editTrip
+}
+
 class TripViewController: UIViewController {
     var trip: Trip! = nil
+    var tripType: TripType = .editTrip
     
     @IBOutlet weak var tripNameTextField: UITextField!
     @IBOutlet weak var completedIndicator: UISwitch!
@@ -21,8 +27,12 @@ class TripViewController: UIViewController {
     }
     
     override func viewDidLoad() {
-        self.tripNameTextField.text = self.trip.name
-        self.completedIndicator.setOn(self.trip.isCompleted, animated: false)
+        if tripType == .editTrip {
+            self.tripNameTextField.text = self.trip.name
+            self.completedIndicator.setOn(self.trip.isCompleted, animated: false)
+        } else {
+            self.trip = Trip(name: "", owner: NetworkService.loggedInUser)
+        }
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
@@ -30,22 +40,42 @@ class TripViewController: UIViewController {
         
         let savedTrip = Trip(id: trip.id, name: tripNameTextField.text!, email: NetworkService.loggedInUser.email, isCompleted: completedIndicator.isOn, waypoints: trip.waypoints)
         
-        NetworkService.putTrip(trip: savedTrip) { (code) in
-            if let code = code {
-                switch code {
-                case 200:
-                    print("Successfully saved trip")
-                    DispatchQueue.main.async(execute: {
-                        self.performSegue(withIdentifier: "toTripsView", sender: self)
-                    })
-                case 400:
-                    print("Bad request when saving trip")
-                default:
-                    print("An unknown error occurred while trying to save a trip")
+        if self.tripType == .editTrip {
+            NetworkService.putTrip(trip: savedTrip) { (code) in
+                if let code = code {
+                    switch code {
+                    case 200:
+                        print("Successfully saved trip")
+                        DispatchQueue.main.async(execute: {
+                            self.performSegue(withIdentifier: "toTripsView", sender: self)
+                        })
+                    case 400:
+                        print("Bad request when saving trip")
+                    default:
+                        print("An unknown error occurred while trying to save a trip")
+                    }
+                } else {
+                    print("Server error")
                 }
-            } else {
-                print("Server error")
             }
+        } else {
+            NetworkService.postTrip(trip: savedTrip, completion: { (code) in
+                if let code = code {
+                    switch code {
+                    case 400:
+                        DispatchQueue.main.async(execute: {
+                            self.showAlert(title: "Error", message: "A trip with that name already exists.", actionText: "Ok")
+                        })
+                    case 201:
+                        print("Trip created successfully")
+                        DispatchQueue.main.async(execute: {
+                            self.tableView.reloadData()
+                        })
+                    default:
+                        print("Error posting trip")
+                    }
+                }
+            })
         }
     }
     
@@ -61,6 +91,9 @@ class TripViewController: UIViewController {
 
 extension TripViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard trip != nil else {
+            return 0
+        }
         return self.trip!.waypoints.count
     }
     

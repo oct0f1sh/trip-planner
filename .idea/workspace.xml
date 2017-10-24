@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="4ca50280-42f6-4108-b0a4-daff8c68d4d1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner.xcodeproj/project.xcworkspace/xcuserdata/duncan.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner.xcodeproj/project.xcworkspace/xcuserdata/duncan.xcuserdatad/UserInterfaceState.xcuserstate" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Extensions/Trip+Decodable.swift" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Extensions/Trip+Decodable.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Services/NetworkService.swift" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Services/NetworkService.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Storyboards/Trip.storyboard" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Storyboards/Trip.storyboard" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Storyboards/Trips.storyboard" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Storyboards/Trips.storyboard" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/View Controllers/LoginViewController.swift" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/View Controllers/LoginViewController.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/View Controllers/TripViewController.swift" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/View Controllers/TripViewController.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/View Controllers/TripsViewController.swift" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/View Controllers/TripsViewController.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.py" afterPath="$PROJECT_DIR$/app.py" />
@@ -31,8 +27,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="623">
-              <caret line="126" column="0" lean-forward="true" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+            <state relative-caret-position="489">
+              <caret line="125" column="26" lean-forward="true" selection-start-line="125" selection-start-column="26" selection-end-line="125" selection-end-column="26" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
               </folding>
@@ -346,8 +342,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="623">
-          <caret line="126" column="0" lean-forward="true" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
+        <state relative-caret-position="489">
+          <caret line="125" column="26" lean-forward="true" selection-start-line="125" selection-start-column="26" selection-end-line="125" selection-end-column="26" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
           </folding>
