@@ -69,6 +69,7 @@ class TripViewController: UIViewController {
                     case 201:
                         print("Trip created successfully")
                         DispatchQueue.main.async(execute: {
+                            self.performSegue(withIdentifier: "toTripsView", sender: self)
                             self.tableView.reloadData()
                         })
                     default:
