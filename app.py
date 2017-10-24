@@ -150,19 +150,17 @@ class Trip(Resource):
 
     @authenticate_user
     def put(self, trip_id=None):
+        if trip_id is None:
+            return (None, 400, None)
         trip_collection = app.db.trips
-        new_waypoint = request.json['waypoint']
-        trip = trip_collection.find_one({"_id": ObjectId(trip_id)})
+        new_trip = request.json
+        db_trip = trip_collection.find_one({'_id': ObjectId(trip_id)})
 
-
-        if trip is None:
-            return ('Invalid trip_id', 400, None)
+        if db_trip is None:
+            return ('Bad ID', 400, None)
         else:
-            trip_collection.update({"_id": ObjectId(trip_id)}, {'$push': {'waypoints': new_waypoint}})
-
-        updated_trip = trip_collection.find_one({"_id": ObjectId(trip_id)})
-
-        return (updated_trip, 200, None)
+            updated_trip = trip_collection.update(db_trip, {'$set': new_trip})
+            return (updated_trip, 200, None)
 
     @authenticate_user
     def delete(self, trip_id=None):

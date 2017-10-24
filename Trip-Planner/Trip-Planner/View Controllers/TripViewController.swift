@@ -24,6 +24,30 @@ class TripViewController: UIViewController {
         self.tripNameTextField.text = self.trip.name
         self.completedIndicator.setOn(self.trip.isCompleted, animated: false)
     }
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        guard tripNameTextField.text != "" || tripNameTextField.text != nil else { return }
+        
+        let savedTrip = Trip(name: tripNameTextField.text!, owner: NetworkService.loggedInUser, isCompleted: self.completedIndicator.isOn, waypoints: trip.waypoints)
+        
+        NetworkService.putTrip(trip: savedTrip) { (code) in
+            if let code = code {
+                switch code {
+                case 200:
+                    print("Successfully saved trip")
+                    DispatchQueue.main.async(execute: {
+                        self.performSegue(withIdentifier: "toTripsView", sender: self)
+                    })
+                case 400:
+                    print("Bad request when saving trip")
+                default:
+                    print("An unknown error occurred while trying to save a trip")
+                }
+            } else {
+                print("Server error")
+            }
+        }
+    }
 }
 
 extension TripViewController: UITableViewDataSource {

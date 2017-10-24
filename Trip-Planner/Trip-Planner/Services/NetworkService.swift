@@ -10,8 +10,8 @@ import Foundation
 
 class NetworkService {
     static var loggedInUser: User!
-    static let usersURL = URL(string: "http://127.0.0.1:5000/users/")!
-    static let tripsURL = URL(string: "http://127.0.0.1:5000/trips/")!
+    static let usersURL = URL(string: "https://aqueous-waters-43306.herokuapp.com/users/")!
+    static let tripsURL = URL(string: "https://aqueous-waters-43306.herokuapp.com/trips/")!
     static let tripsRequest = URLRequest(url: NetworkService.tripsURL)
     static let usersRequest = URLRequest(url: NetworkService.usersURL)
     
@@ -85,4 +85,50 @@ class NetworkService {
         }
         task.resume()
     }
+    
+    static func putTrip(trip: Trip, user: User = NetworkService.loggedInUser, completion: @escaping (Int?) -> Void) {
+        let url = URL(string: "https://aqueous-waters-43306.herokuapp.com/trips/\(trip.id!)")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        let session = URLSession.shared
+        let encoder = JSONEncoder()
+        
+        let trip = try! encoder.encode(trip)
+        
+        request.addValue(user.authHeader, forHTTPHeaderField: "Authorization")
+        request.httpBody = trip
+        
+        let task = session.dataTask(with: request) { (data, response, error) in
+            guard error == nil else {
+                print("Error PUTting trip")
+                completion(nil)
+                return
+            }
+            
+            if let response = response {
+                let response = response as! HTTPURLResponse
+                print("Trip PUT response code: \(response)")
+                completion(response.statusCode)
+            }
+        }
+        task.resume()
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

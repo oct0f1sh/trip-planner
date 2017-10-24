@@ -14,6 +14,7 @@ struct Trip {
     let owner: String
     var isCompleted: Bool
     var waypoints: [String]
+    var id: String? = nil
     
     init(name: String, owner: User, isCompleted: Bool = false) {
         self.name = name
@@ -22,7 +23,8 @@ struct Trip {
         self.owner = owner.email
     }
     
-    init(name: String, email: String, isCompleted: Bool, waypoints: [String]) {
+    init(id: String? = nil, name: String, email: String, isCompleted: Bool, waypoints: [String]) {
+        self.id = id
         self.name = name
         self.owner = email
         self.isCompleted = isCompleted
@@ -34,5 +36,6 @@ struct Trip {
         case owner
         case isCompleted = "is_completed"
         case waypoints
+        case id
     }
 }
