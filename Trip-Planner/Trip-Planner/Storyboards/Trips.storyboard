@@ -63,7 +63,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uuW-30-sbr"/>
                     </view>
-                    <navigationItem key="navigationItem" id="VtK-4e-JK4"/>
+                    <navigationItem key="navigationItem" id="VtK-4e-JK4">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="vnA-aD-jwV">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7EF-jQ-qKz">
+                                <rect key="frame" x="313" y="7" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="daT-cb-KOh" id="s1B-Py-i3v"/>
                     </connections>

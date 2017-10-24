@@ -5,11 +5,13 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner.xcodeproj/project.xcworkspace/xcuserdata/duncan.xcuserdatad/UserInterfaceState.xcuserstate" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner.xcodeproj/project.xcworkspace/xcuserdata/duncan.xcuserdatad/UserInterfaceState.xcuserstate" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Extensions/Trip+Decodable.swift" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Extensions/Trip+Decodable.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Extensions/Trip+Encodable.swift" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Extensions/Trip+Encodable.swift" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Models/Trip.swift" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Models/Trip.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Services/NetworkService.swift" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Services/NetworkService.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Storyboards/Trip.storyboard" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Storyboards/Trip.storyboard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Storyboards/Trips.storyboard" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/Storyboards/Trips.storyboard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/View Controllers/LoginViewController.swift" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/View Controllers/LoginViewController.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/View Controllers/TripViewController.swift" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/View Controllers/TripViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/View Controllers/TripsViewController.swift" afterPath="$PROJECT_DIR$/Trip-Planner/Trip-Planner/View Controllers/TripsViewController.swift" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.py" afterPath="$PROJECT_DIR$/app.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,8 +31,8 @@
       <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="160" column="13" lean-forward="false" selection-start-line="160" selection-start-column="13" selection-end-line="160" selection-end-column="13" />
+            <state relative-caret-position="623">
+              <caret line="126" column="0" lean-forward="true" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
               <folding>
                 <element signature="e#0#47#0" expanded="true" />
               </folding>
@@ -74,6 +76,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="x" value="-1920" />
     <option name="width" value="1920" />
     <option name="height" value="1080" />
   </component>
@@ -185,7 +188,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+    <frame x="-1920" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15388711" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -343,8 +346,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="160" column="13" lean-forward="false" selection-start-line="160" selection-start-column="13" selection-end-line="160" selection-end-column="13" />
+        <state relative-caret-position="623">
+          <caret line="126" column="0" lean-forward="true" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
           <folding>
             <element signature="e#0#47#0" expanded="true" />
           </folding>

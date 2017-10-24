@@ -13,6 +13,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var isNewUser: UISwitch!
     
+    override func viewDidLoad() {
+        self.emailTextField.text =  "test@test.co"
+        self.passwordTextField.text = "test"
+    }
+    
     @IBAction func loginButtonTapped(_ sender: Any) {
         if emailTextField.text == "" {
             print("Email text field empty")

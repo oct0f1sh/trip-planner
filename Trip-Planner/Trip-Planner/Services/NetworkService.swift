@@ -79,7 +79,7 @@ class NetworkService {
             }
             
             if let data = data {
-                let trips = try? JSONDecoder().decode([Trip].self, from: data)
+                let trips = try! JSONDecoder().decode([Trip].self, from: data)
                 completion(trips)
             }
         }
@@ -92,7 +92,6 @@ class NetworkService {
         request.httpMethod = "PUT"
         let session = URLSession.shared
         let encoder = JSONEncoder()
-        let decoder = JSONDecoder()
         
         
         

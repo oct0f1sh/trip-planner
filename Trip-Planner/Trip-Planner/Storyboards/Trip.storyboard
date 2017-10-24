@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Title-->
+        <!--Trip View Controller-->
         <scene sceneID="WpO-E4-3tt">
             <objects>
                 <viewController id="wiR-MH-sbz" customClass="TripViewController" customModule="Trip_Planner" customModuleProvider="target" sceneMemberID="viewController">
@@ -99,12 +99,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kln-dj-6pV"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="xBL-AB-hca">
+                    <navigationItem key="navigationItem" id="xBL-AB-hca">
                         <barButtonItem key="backBarButtonItem" title="Back" id="yTO-iA-KLm"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="js7-2d-g2F">
                             <connections>
-                                <action selector="saveButtonTapped:" destination="wiR-MH-sbz" id="CI1-y4-oA6"/>
-                                <segue destination="6Ey-nR-mfe" kind="unwind" identifier="toTripsView" unwindAction="unwindToTripsWithSegue:" id="2Me-a6-pKC"/>
+                                <action selector="saveButtonTapped:" destination="wiR-MH-sbz" id="vsv-mu-L8g"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -113,6 +112,7 @@
                         <outlet property="completedIndicator" destination="lnE-5C-uZn" id="y91-R3-7Aq"/>
                         <outlet property="tableView" destination="b2H-pT-yQT" id="y5g-JY-X6n"/>
                         <outlet property="tripNameTextField" destination="o3q-1B-cM6" id="Ojo-lE-fKs"/>
+                        <segue destination="6Ey-nR-mfe" kind="unwind" identifier="toTripsView" unwindAction="unwindToTripsWithSegue:" id="WJm-sX-M9W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x1f-Hl-GC8" userLabel="First Responder" sceneMemberID="firstResponder"/>

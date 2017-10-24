@@ -53,6 +53,7 @@ class TripViewController: UIViewController {
         self.showInputTextAlert(title: "Add a waypoint", message: "Enter the name of the waypoint you would like to add", placeholder: "Waypoint") { (waypoint) in
             if let waypoint = waypoint {
                 self.trip.waypoints.append(waypoint)
+                self.tableView.reloadData()
             }
         }
     }
@@ -67,5 +68,22 @@ extension TripViewController: UITableViewDataSource {
         let cell: WaypointCell = tableView.dequeueReusableCell(withIdentifier: "WaypointCell") as! WaypointCell
         cell.waypointCell.text = trip.waypoints[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        return UITableViewCellEditingStyle.delete
+    }
+}
+
+extension TripViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            self.trip.waypoints.remove(at: indexPath.row)
+            self.tableView.reloadData()
+        }
     }
 }
