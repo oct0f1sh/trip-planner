@@ -31,11 +31,15 @@ struct Trip {
         self.waypoints = waypoints
     }
     
-    enum TripKeys: String, CodingKey {
+    enum Keys: String, CodingKey {
         case name
         case owner
         case isCompleted = "is_completed"
         case waypoints
-        case id
+        case id = "_id"
+    }
+    
+    enum IdKey: String, CodingKey {
+        case oid = "$oid"
     }
 }

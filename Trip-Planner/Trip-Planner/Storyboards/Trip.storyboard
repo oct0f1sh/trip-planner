@@ -79,15 +79,23 @@
                                     <outlet property="delegate" destination="wiR-MH-sbz" id="qdr-8l-mCr"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Csd-iZ-mHu">
+                                <rect key="frame" x="338" y="168" width="22" height="22"/>
+                                <connections>
+                                    <action selector="addButtonTapped:" destination="wiR-MH-sbz" eventType="touchUpInside" id="WD8-HH-zX5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="b2H-pT-yQT" firstAttribute="top" secondItem="s3P-14-8w3" secondAttribute="bottom" constant="20" id="0Pd-o7-Kx2"/>
                             <constraint firstItem="s3P-14-8w3" firstAttribute="top" secondItem="kln-dj-6pV" secondAttribute="top" constant="60" id="Ngd-ew-A6F"/>
                             <constraint firstAttribute="bottom" secondItem="b2H-pT-yQT" secondAttribute="bottom" id="RJu-vJ-ois"/>
+                            <constraint firstItem="kln-dj-6pV" firstAttribute="trailing" secondItem="Csd-iZ-mHu" secondAttribute="trailing" constant="15" id="avO-fc-yqL"/>
                             <constraint firstItem="s3P-14-8w3" firstAttribute="centerX" secondItem="jWA-mb-Bta" secondAttribute="centerX" id="g4d-aB-XYE"/>
                             <constraint firstAttribute="trailing" secondItem="b2H-pT-yQT" secondAttribute="trailing" id="m22-i6-KBs"/>
                             <constraint firstItem="b2H-pT-yQT" firstAttribute="leading" secondItem="jWA-mb-Bta" secondAttribute="leading" id="rez-K8-XsR"/>
+                            <constraint firstItem="b2H-pT-yQT" firstAttribute="top" secondItem="Csd-iZ-mHu" secondAttribute="bottom" constant="15" id="ti8-bP-PBe"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kln-dj-6pV"/>
                     </view>
@@ -96,6 +104,7 @@
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="js7-2d-g2F">
                             <connections>
                                 <action selector="saveButtonTapped:" destination="wiR-MH-sbz" id="CI1-y4-oA6"/>
+                                <segue destination="6Ey-nR-mfe" kind="unwind" identifier="toTripsView" unwindAction="unwindToTripsWithSegue:" id="2Me-a6-pKC"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -107,6 +116,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x1f-Hl-GC8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="6Ey-nR-mfe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1068" y="-84.107946026986511"/>
         </scene>

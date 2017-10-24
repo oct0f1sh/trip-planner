@@ -19,7 +19,7 @@ class TripsViewController: UIViewController {
         }
     }
     
-    override func awakeFromNib() {
+    override func viewWillAppear(_ animated: Bool) {
         NetworkService.getTrips { (trips) in
             if let trips = trips {
                 self.trips = trips
@@ -28,6 +28,10 @@ class TripsViewController: UIViewController {
     }
     
     @IBAction func addTripTapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func unwindToTrips(segue: UIStoryboardSegue) {
         
     }
     

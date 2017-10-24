@@ -10,29 +10,19 @@ import Foundation
 import UIKit
 
 extension Trip: Decodable {
-    enum Keys: String, CodingKey {
-        case name
-        case owner
-        case isCompleted = "is_completed"
-        case waypoints
-        case id = "_id"
-    }
-    
-    enum idKey: String, CodingKey {
-        case oid = "$oid"
-    }
-    
-    
-    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: Keys.self)
-        let idConntainer = try container.nestedContainer(keyedBy: idKey.self, forKey: .id)
-        let id = try idConntainer.decode(String.self, forKey: .oid)
+        let idConntainer = try container.nestedContainer(keyedBy: IdKey.self, forKey: .id)
+        let id = try idConntainer.decodeIfPresent(String.self, forKey: .oid)
         let name = try container.decode(String.self, forKey: .name)
         let owner = try container.decode(String.self, forKey: .owner)
         let isCompleted = try container.decode(Bool.self, forKey: .isCompleted)
         let waypoints = try container.decode([String].self, forKey: .waypoints)
         
-        self.init(id: id, name: name, email: owner, isCompleted: isCompleted, waypoints: waypoints)
+        if let id = id {
+            self.init(id: id, name: name, email: owner, isCompleted: isCompleted, waypoints: waypoints)
+        } else {
+            self.init(name: name, email: owner, isCompleted: isCompleted, waypoints: waypoints)
+        }
     }
 }

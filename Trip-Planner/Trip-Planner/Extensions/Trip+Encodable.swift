@@ -10,8 +10,8 @@ import Foundation
 
 extension Trip: Encodable {
     func encode(to encoder: Encoder) throws {
-        var values = encoder.container(keyedBy: TripKeys.self)
-        var waypointsContainer = encoder.unkeyedContainer()
+        var values = encoder.container(keyedBy: Keys.self)
+        var waypointsContainer = values.nestedUnkeyedContainer(forKey: .waypoints)
         try values.encode(name, forKey: .name)
         try values.encode(owner, forKey: .owner)
         try values.encode(isCompleted, forKey: .isCompleted)

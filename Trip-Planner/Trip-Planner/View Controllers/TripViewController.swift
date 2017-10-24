@@ -28,7 +28,7 @@ class TripViewController: UIViewController {
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard tripNameTextField.text != "" || tripNameTextField.text != nil else { return }
         
-        let savedTrip = Trip(name: tripNameTextField.text!, owner: NetworkService.loggedInUser, isCompleted: self.completedIndicator.isOn, waypoints: trip.waypoints)
+        let savedTrip = Trip(id: trip.id, name: tripNameTextField.text!, email: NetworkService.loggedInUser.email, isCompleted: completedIndicator.isOn, waypoints: trip.waypoints)
         
         NetworkService.putTrip(trip: savedTrip) { (code) in
             if let code = code {
@@ -45,6 +45,14 @@ class TripViewController: UIViewController {
                 }
             } else {
                 print("Server error")
+            }
+        }
+    }
+    
+    @IBAction func addButtonTapped(_ sender: Any) {
+        self.showInputTextAlert(title: "Add a waypoint", message: "Enter the name of the waypoint you would like to add", placeholder: "Waypoint") { (waypoint) in
+            if let waypoint = waypoint {
+                self.trip.waypoints.append(waypoint)
             }
         }
     }

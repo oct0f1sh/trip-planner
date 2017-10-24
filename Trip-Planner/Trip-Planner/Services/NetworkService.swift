@@ -92,10 +92,14 @@ class NetworkService {
         request.httpMethod = "PUT"
         let session = URLSession.shared
         let encoder = JSONEncoder()
+        let decoder = JSONDecoder()
+        
+        
         
         let trip = try! encoder.encode(trip)
         
         request.addValue(user.authHeader, forHTTPHeaderField: "Authorization")
+        request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
         request.httpBody = trip
         
         let task = session.dataTask(with: request) { (data, response, error) in
